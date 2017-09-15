@@ -1,0 +1,48 @@
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+LESSON LEARNED:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+-> Dasar arsitektur dari MVC adalah dimana Model bertugas untuk menyimpan data atau berperan dalam proses yang berhubungan dengan database, View bertugas sebagai tampilan luar atau presentasi dari seluruh program. Dalam tutorial ini, sarana view yang saya gunakan adalah melalui HTML. Dan yang terakhir, tugas dari Controller adalah menjalankan semua fungsi dan logika dari program yang kita buat.
+
+-> Penggunaan framwork MVC dalam pemrograman berskala perusahaan sangatlah efisien dan dapat mempercepat waktu pengerjaan karena dengan MVC, developer tidak perlu mengerjakan program dari 0, namun hanya perlu menggunakan fasilitas MVC untuk mengimplementasikan program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+JAWABAN:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+>>LATIHAN PROJECT HELLO WORLD-------------------------------------------------------------------------------------------------------------------------
+
+1. 	Tidak terjadi compile error, saat mengakses localhost:8080/hello terjadi white label error karena alamat routing diubah menjadi /hello123, program tidak dapat menemukan /hello sehingga terjadi error 
+
+2. 	Tidak terjadi compile error, saat mengakses localhost:8080/hello page hello tetap muncul karena nama method tidak mempengaruhi alamat routing sehingga program akan tetap berjalan sesuai request HTTP pada path /hello dan memanggil method hello()
+
+3. 	Tidak terjadi compile error, ketika return diubah menjadi "hello123" page hello tidak ditampilkan
+
+   	page hello tidak ditampilkan karena return dari method tersebut maksudnya adalah memanggil halaman untuk ditampilkan. Karena tidak ada halaman bernama "hello123", maka program tidak bisa menampilkan page hello
+
+
+
+>LATIHAN REQUEST PARAMETER-----------------------------------------------------------------------------------------------------------------------------
+
+1. 	Halaman menampilkan "Selamat datang Channek!", page tetap muncul karena routing /hello/greeting masih valid, dimana program masih dapat mengakses controller lewat path greeting tersebut. 
+
+2. 	Terjadi white label error, karena belum ada attribut tambahan pada RequestParam yaitu required = false yang membuat input menjadi null jika tidak ada hasil request GET
+
+3. 	page menampilkan "Selamat datang dunia!", hal ini terjadi dikarenakan tidak ada request GET HTTP, dan karena ada atribut defaultValue pada RequestParam, program secara otomatis menampilkan nilai yang default yaitu "dunia" jika requestnya kosong
+
+4. 	penggunaan thymeleaf text pada tag p (th:text=....) meng-overide text pada isi tag tersebut, sehingga text apapun yang ada di dalam tag p akan tertiban dengan text yang ada di atribut th tag p tersebut.
+
+>LATIHAN PATH VARIABLE---------------------------------------------------------------------------------------------------------------------------------
+
+1. 	Terjadi white label error pada page karena program tidak mendapatkan variable apapun dari path, dan tidak ada default value atau handle apapun
+	jika tidak ada variable yang dimasukan
+
+	Karena sudah ada if yang menghandle jika tidak ada variable yang dimasukan, dan ada pengecekan isPresent(), maka page menampilkan "Selamat datang Dengklek" karena jika tidak ada masukan variable, program akan memasukan nama Dengklek sebagai alternatif
+
+	Secara standard program akan menampilkan "Selamat datang Channek" karena ada variable yang dimasukan dari path

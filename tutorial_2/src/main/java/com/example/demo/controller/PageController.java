@@ -17,14 +17,14 @@ public class PageController
 		return "hello";	
 	}
 	
-	@RequestMapping("/greeting")
+	@RequestMapping("/greetingp")
 	public String greeting(@RequestParam(value = "name", required = false, defaultValue = "dunia") String name, Model model)
 	{
 		model.addAttribute("name", name);
 		return "greeting";
 	}
 	
-	@RequestMapping(value = {"/greetingPath", "greetingPath/{name}"})
+	@RequestMapping(value = {"/greeting", "greeting/{name}"})
 	public String greetingPath(@PathVariable Optional<String> name, Model model)
 	{
 		if(name.isPresent()) {
